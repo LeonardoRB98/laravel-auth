@@ -66,6 +66,8 @@
                                     </form>
                                 </div>
                             </li>
+                            <li> <a class="nav-link" href="{{route('admin.posts.create')}}">aggiungi post</a> </li>
+                            <li> <a class="nav-link" href="{{route('admin.posts.index')}}">Torna ai posts</a> </li>
                         @endguest
                     </ul>
                 </div>

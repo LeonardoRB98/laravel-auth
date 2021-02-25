@@ -25,6 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin') // prefisso delle rotte admin.post, admin.post.index ecc
     ->namespace('Admin') //nome del name space quindi sotto cartella Admin
     ->middleware('auth') // filtro autenticazione
+    ->name('admin.') // aggingnge il admin. al nome di tutte le rotte es da posts.store a admin.posts.strore
     ->group(function() {
     Route::resource('posts', 'PostController'); // crea le 7 rotte standard
 
