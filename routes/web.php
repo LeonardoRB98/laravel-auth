@@ -20,3 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// creazione rotte protette da autenticazione 
+Route::prefix('admin') // prefisso delle rotte admin.post, admin.post.index ecc
+    ->namespace('Admin') //nome del name space quindi sotto cartella Admin
+    ->middleware('auth') // filtro autenticazione
+    ->group(function() {
+    Route::resource('posts', 'PostController'); // crea le 7 rotte standard
+
+});

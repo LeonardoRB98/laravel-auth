@@ -11,6 +11,7 @@ class HomeController extends Controller
      *
      * @return void
      */
+    // questa funziona verrà eseguita ogni volta che verrà richiamato il controllore home
     public function __construct()
     {
         $this->middleware('auth');
