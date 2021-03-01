@@ -21,6 +21,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/posts', 'PostController@index')->name('posts.index');
+
+
 // creazione rotte protette da autenticazione 
 Route::prefix('admin') // prefisso delle rotte admin.post, admin.post.index ecc
     ->namespace('Admin') //nome del name space quindi sotto cartella Admin
