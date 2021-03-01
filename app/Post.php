@@ -11,6 +11,7 @@ class Post extends Model
         'title',
         'body',
         'slug',
+        'img_path'
     ];
     public function user() {
         return $this->belongsTo('App\User');

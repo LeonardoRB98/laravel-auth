@@ -8,6 +8,8 @@ use App\Post;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+// serve per salvare file
+use Illuminate\Support\Facades\Storage;
 class PostController extends Controller
 {
     /**
@@ -53,6 +55,9 @@ class PostController extends Controller
         // traminte la classe Auth prendo l'id dell'utente attualmente loggato
         $data["user_id"] = Auth::id();
         // dd($data);
+        // salva i file messi nel form accetta come argomento (local, public, s3) file filessystem.php
+        //put server and indicare la cartella dove saltare + il file da salvare 
+        $data["img_path"] = Storage::disk('public')->put('images', $data['img_path']);
         $newPost = new Post();
         $newPost->fill($data);
         $newPost->save();
